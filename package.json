@@ -1,0 +1,27 @@
+{
+  "name": "electron-carbon",
+  "version": "1.28.0",
+  "license": "Apache 2.0",
+  "scripts": {
+    "build": "gatsby build",
+    "build:clean": "yarn clean && gatsby build",
+    "build-client": "npm run build && npm run serve",
+    "clean": "gatsby clean",
+    "dev": "gatsby develop -H 0.0.0.0",
+    "dev:clean": "gatsby clean && gatsby develop -H 0.0.0.0",
+    "electron": "electron .",
+    "serve": "gatsby serve",
+    "start": "concurrently --kill-others \"npm run build-client\" \"wait-on tcp:9000 && npm run electron\""
+  },
+  "dependencies": {
+    "gatsby": "^2.24.14",
+    "gatsby-theme-carbon": "^1.28.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "electron": "^13.1.9",
+    "wait-on": "^6.0.0"
+  }
+}
